@@ -5,7 +5,7 @@ import "./index.css";
 import { createClient } from "@supabase/supabase-js";
 import { Database } from "../database.types";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Page1 from "./pages/page1.tsx";
+import Page1 from "./pages/Page1.tsx";
 
 export const supabase = createClient<Database>(
   import.meta.env.VITE_SUPABASE_PROJECT_URL,
