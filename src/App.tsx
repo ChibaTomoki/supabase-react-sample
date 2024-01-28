@@ -1,30 +1,24 @@
-import { useEffect, useState } from "react";
-import { supabase } from "./main";
+import { Link } from "react-router-dom";
 
 function App() {
-  const [countries, setCountries] = useState<
-    {
-      id: number;
-      name: string;
-    }[]
-  >([]);
-
-  useEffect(() => {
-    getCountries();
-  }, []);
-
-  async function getCountries() {
-    const { data } = await supabase.from("countries").select();
-    if (!data) return;
-    setCountries(data);
-  }
-
   return (
-    <ul>
-      {countries.map((country) => (
-        <li key={country.name}>{country.name}</li>
-      ))}
-    </ul>
+    <div>
+      <h1>Top Page</h1>
+      <ul>
+        <li>
+          <Link to="page1">Page1</Link>
+        </li>
+        <li>
+          <Link to="page2">Page2</Link>
+        </li>
+        <li>
+          <Link to="page3">Page3</Link>
+        </li>
+        <li>
+          <Link to="page4">Page4</Link>
+        </li>
+      </ul>
+    </div>
   );
 }
 
