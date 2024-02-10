@@ -17,14 +17,27 @@ If you are developing a production application, we recommend updating the config
 export default {
   // other rules...
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
+    ecmaVersion: "latest",
+    sourceType: "module",
+    project: ["./tsconfig.json", "./tsconfig.node.json"],
     tsconfigRootDir: __dirname,
   },
-}
+};
 ```
 
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+## 追記
+
+### 必要な環境変数
+
+- VITE_SUPABASE_PROJECT_URL
+- VITE_SUPABASE_API_KEY
+- VITE_BASE_URL
+
+### Supabase のテーブルから TypeScript の型を生成する方法
+
+supabase をインストールした状態で下記コマンドを実行する
+`npx supabase gen types typescript --project-id abcdefghijklmnopqrst > database.types.ts`
