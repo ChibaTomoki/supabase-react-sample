@@ -9,7 +9,7 @@ import Page1 from "./pages/Page1.tsx";
 import Page2 from "./pages/Page2.tsx";
 import Page3 from "./pages/Page3.tsx";
 import Page4 from "./pages/Page4.tsx";
-import SignIn from "./pages/Signin.tsx";
+import Todo from "./pages/Todo.tsx";
 
 export const supabase = createClient<Database>(
   import.meta.env.VITE_SUPABASE_PROJECT_URL,
@@ -36,6 +36,10 @@ const router = createBrowserRouter([
   {
     path: "/page4",
     element: <Page4 />,
+  },
+  {
+    path: "/todo",
+    element: <Todo />,
   },
 ]);
 
