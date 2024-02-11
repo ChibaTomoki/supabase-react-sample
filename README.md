@@ -35,7 +35,6 @@ export default {
 
 - VITE_SUPABASE_PROJECT_URL
 - VITE_SUPABASE_API_KEY
-- VITE_BASE_URL
 
 ### Supabase のテーブルから TypeScript の型を生成する方法
 
