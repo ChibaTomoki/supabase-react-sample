@@ -20,7 +20,7 @@ const Todo: React.FC = () => {
 
   const addTodo = async () => {
     if (newTodo.trim() !== "") {
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from("todo")
         .insert([{ title: newTodo }])
         .select();
@@ -30,7 +30,7 @@ const Todo: React.FC = () => {
   };
 
   const editTodo = async (id: number, newTitle: string) => {
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from("todo")
       .update({ title: newTitle })
       .eq("id", id)
